@@ -1,0 +1,24 @@
+pipeline{
+
+    agent any
+
+    tools{
+
+        MsBuild LocalMSBuild
+        jdk LocalJDK
+    }
+
+    stages{
+
+        Stage('Nuget Restore'){
+
+            steps{
+                sh "D:\Tushar\Study\Jenkins\NuGet.CommandLine\tools\nuget.exe" restore SeleniumNUnitParam.sln
+            }
+        }
+        
+    }
+
+
+
+}
